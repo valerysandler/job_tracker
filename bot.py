@@ -155,6 +155,9 @@ async def show_stats(query, context):
     await query.message.reply_text(message)
 
 def main():
+    import os
+    from dotenv import load_dotenv
+    load_dotenv()
     init_db()
     application = Application.builder().token(os.getenv("BOT_TOKEN")).build()
 
